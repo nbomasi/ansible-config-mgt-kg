@@ -16,7 +16,7 @@
   ansible.builtin.git:
     repo: https://github.com/nbomasi/tooling-1.git
     #dest: /var/www/html
-    dest: /home/ubuntu
+    dest: /home/ec2-user
     force: yes
 
 - name: copy html content to one level up
