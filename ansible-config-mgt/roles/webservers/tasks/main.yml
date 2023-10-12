@@ -21,7 +21,7 @@
 
 - name: copy html content to one level up
   become: true
-  command: cp -R /home/ec2-user/boma/tooling-1/html/*  /var/www/html/
+  command: cp -R /home/ec2-user/boma/html/*  /var/www/html/
 
 - name: Start service httpd, if not started
   become: true
