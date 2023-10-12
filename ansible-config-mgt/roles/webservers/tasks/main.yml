@@ -16,12 +16,12 @@
   ansible.builtin.git:
     repo: https://github.com/nbomasi/tooling-1.git
     #dest: /var/www/html
-    dest: /var/www
+    dest: /home/ubuntu
     force: yes
 
 - name: copy html content to one level up
   become: true
-  command: cp -r /var/www/tooling-1/html /var/www/
+  command: cp -R /home/ec2-user/tooling-1/html/*  /var/www/html/
 
 - name: Start service httpd, if not started
   become: true
@@ -29,8 +29,8 @@
     name: httpd
     state: started
 
-- name: recursively remove /var/www/html directory
-  become: true
-  ansible.builtin.file:
-    path: /var/www/html
-    state: absent
+# - name: recursively remove /var/www/html directory
+#   become: true
+#   ansible.builtin.file:
+#     path: /var/www/html
+#     state: absent
