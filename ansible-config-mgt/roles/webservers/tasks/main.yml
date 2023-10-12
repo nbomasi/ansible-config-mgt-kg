@@ -39,7 +39,7 @@
   become: true
   ansible.builtin.service:
     name: httpd
-    state: enabled
+    state: enable
 
 # - name: recursively remove /var/www/html directory
 #   become: true
