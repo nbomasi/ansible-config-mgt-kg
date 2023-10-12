@@ -16,8 +16,4 @@ To flow with and enjoy project 13,
 
 * For apache, default/main.yml, template/vhosts.conf.j2 were edited for same purpose as nginx
 
-Hello world you and me
-
-it is good to be good
-
-* ello everyone
+Please save my time
