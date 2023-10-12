@@ -27,7 +27,19 @@
   become: true
   ansible.builtin.service:
     name: httpd
-    state: restart
+    state: started
+
+- name: restart apache
+  become: true
+  ansible.builtin.service:
+    name: httpd
+    state: restarted
+
+- name: enable apache
+  become: true
+  ansible.builtin.service:
+    name: httpd
+    state: enabled
 
 # - name: recursively remove /var/www/html directory
 #   become: true
