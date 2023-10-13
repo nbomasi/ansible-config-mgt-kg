@@ -22,4 +22,8 @@ Method 2: Build create pull request and merge to main before jenkins build
 
 power shell equivalent of tree: tree /f
 
+## Community role
+
+At this point I need to use remote ssh agent, so that it will be easy for me to edit remote files through ssh, since vim or nano will be very stressfull.
+
 Pushing branch:dynamic-assignments
