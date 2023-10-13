@@ -19,3 +19,5 @@ To flow with and enjoy project 13,
 
 Method 1: Build branch with jenkins
 Method 2: Build create pull request and merge to main before jenkins build
+
+power shell equivalent of tree: tree /f
