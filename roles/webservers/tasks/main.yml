@@ -1,0 +1,49 @@
+---
+- name: Install apache
+  become: true
+  ansible.builtin.yum:
+    name: "httpd"
+    state: present
+
+- name: Install git
+  become: true
+  ansible.builtin.yum:
+    name: "git"
+    state: present
+
+- name: clone a repo
+  become: true
+  ansible.builtin.git:
+    repo: https://github.com/nbomasi/tooling-1.git
+    #dest: /var/www/html
+    dest: /home/ec2-user/boma
+    force: yes
+
+- name: copy html content to one level up
+  become: true
+  command: cp -R /home/ec2-user/boma/html  /var/www/
+
+- name: Start service httpd, if not started
+  become: true
+  ansible.builtin.service:
+    name: httpd
+    state: started
+
+- name: restart apache and enable httpd
+  become: true
+  ansible.builtin.service:
+    name: httpd
+    state: restarted
+    enabled: yes
+
+# - name: enable apache
+#   become: true
+#   ansible.builtin.service:
+#     name: httpd
+#     state: enable
+
+# - name: recursively remove /var/www/html directory
+#   become: true
+#   ansible.builtin.file:
+#     path: /var/www/html
+#     state: absent
